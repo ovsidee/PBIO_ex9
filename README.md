@@ -11,7 +11,7 @@
 - i implemented those features:
 1) **_Batch Mode_** to generate multiple sequences in one run
 2) **_Configurable distribution_** to manually weight the probability of A/C/G/T
-3) **_Motif Searching_** to find the exact positions of specific strings (when it finds it prints something like:
+3) **_Motif Searching_** to find the exact positions of specific strings (when it finds\or does not, it prints something like:
    ```
    Motif 'ATG' found at positions: [65, 68, 84, 87, 121, 172]
    Motif 'ATG' found at positions: [89]
