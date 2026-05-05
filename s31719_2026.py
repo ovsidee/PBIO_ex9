@@ -168,8 +168,6 @@ def main():
         # core generation of sequence
         raw_sequence = generate_sequence(length, distribution)
         stats = calculate_stats(raw_sequence)
-
-        # Name is inserted here
         seq_with_name = insert_name(raw_sequence, name)
 
         # formatting to fasta for DNA
