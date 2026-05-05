@@ -3,11 +3,11 @@
 # Date: 2026-05-02 (2 May)
 # Description:
 # So i did random DNA sequence generator with FASTA formatting,
-# it silently inserts my name: vitalii korytnyi into the sequence without affecting the biological math or line-break formatting
+# it prompts from the user the name and inserts it in random place while not affecting the biological math or line-break formatting
 # i implemented those features:
 # 1) Batch Mode to generate multiple sequences in one run
 # 2) Configurable distribution to manually weight the probability of A/C/G/T
-# 3) Motif Searching to find the exact positions of specific strings (when it finds it prints something like: "Motif 'ATG' found at positions: [65, 68, 84, 87, 121, 172]" \\ Motif 'ATG' found at positions: [89] \\ Motif 'ATG' not found.
+# 3) Motif Searching to find the exact positions of specific strings (when it finds it prints something like: "Motif 'ATG' found at positions: [65, 68, 84, 87, 121, 172]" \ Motif 'ATG' found at positions: [89] \ Motif 'ATG' not found.
 # 4) In Silico Transcription, which automatically generates and saves a corresponding mRNA record (it swaps from T to U for every DNA created)
 # also you can find Test1.fasta, Test2.fasta, Test3.fasta that were generated during program testing
 
@@ -149,7 +149,7 @@ def main():
 
     description = input("Enter a description of the sequence: ").strip()
 
-    name = "VitaliiKorytnyi"
+    name = input("Enter the name to insert into the sequence: ").strip().replace(" ", "")
 
     batch_count = feature_get_batch_count()
     distribution = feature_get_distribution()
