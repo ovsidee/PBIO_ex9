@@ -165,16 +165,18 @@ def main():
     for i in range(1, batch_count + 1):
         current_id = f"{seq_id}_{i:03d}" if batch_count > 1 else seq_id
 
-        # core generation of sequnce
+        # core generation of sequence
         raw_sequence = generate_sequence(length, distribution)
         stats = calculate_stats(raw_sequence)
+
+        # Name is inserted here
         seq_with_name = insert_name(raw_sequence, name)
 
-        # formatting to fasta
+        # formatting to fasta for DNA
         fasta_record = format_fasta(current_id, description, seq_with_name)
 
         # feature no. 4 processing
-        mrna_sequence = feature_transcribe_to_mrna(raw_sequence)
+        mrna_sequence = feature_transcribe_to_mrna(seq_with_name)
         mrna_record = format_fasta(f"{current_id}_mRNA", f"{description} (mRNA)", mrna_sequence)
 
         # file saving
